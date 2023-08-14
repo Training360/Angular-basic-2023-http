@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-directives';
+
+  isSearchBarVisible: boolean = false;
+
+  toggleSearchBar(): void {
+    this.isSearchBarVisible = !this.isSearchBarVisible;
+  }
 }

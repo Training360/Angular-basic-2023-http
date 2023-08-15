@@ -32,6 +32,7 @@
             <th>Seat</th>
             <th>Service</th>
             <th>Checked</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -43,6 +44,12 @@
             <td>
               <span *ngIf="ticket.checked; else no">YES</span>
               <ng-template #no>NO</ng-template>
+            </td>
+            <td>
+              <app-btn-group
+                [data]="ticket"
+                [buttons]="btnGroup">
+              </app-btn-group>
             </td>
           </tr>
         </tbody>

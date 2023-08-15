@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Ticket } from './model/ticket';
+import { IBtn } from './common/btn-group/btn-group.component';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,11 @@ export class AppComponent {
       service: 'tourist',
     },
   ];
+
+  btnGroup: IBtn[] = [
+    {name: 'show', type: 'info', icon: 'fa-eye'},
+    {name: 'remove', type: 'danger', icon: 'fa-trash'},
+  ]
 
   toggleSearchBar(): void {
     this.isSearchBarVisible = !this.isSearchBarVisible;

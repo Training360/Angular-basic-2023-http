@@ -48,7 +48,8 @@
             <td>
               <app-btn-group
                 [data]="ticket"
-                [buttons]="btnGroup">
+                [buttons]="btnGroup"
+                (btnClick)="onGroupClick($event)">
               </app-btn-group>
             </td>
           </tr>

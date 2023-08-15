@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Ticket } from './model/ticket';
-import { IBtn } from './common/btn-group/btn-group.component';
+import { IBtn, IBtnGroupOutput } from './common/btn-group/btn-group.component';
 
 @Component({
   selector: 'app-root',
@@ -43,5 +43,14 @@ export class AppComponent {
 
   toggleSearchBar(): void {
     this.isSearchBarVisible = !this.isSearchBarVisible;
+  }
+
+  onGroupClick(details: IBtnGroupOutput) {
+    if (details.name === 'remove') {
+      const index = this.tickets.findIndex( ticket => ticket === details.data );
+      if (index > -1) {
+        this.tickets.splice(index, 1);
+      }
+    }
   }
 }

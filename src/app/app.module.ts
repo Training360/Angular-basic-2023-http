@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './common/nav/nav.component';
 import { BtnGroupComponent } from './common/btn-group/btn-group.component';
+import { SelectDirective } from './common/btn-group/select.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    BtnGroupComponent
+    BtnGroupComponent,
+    SelectDirective
   ],
   imports: [
     BrowserModule,

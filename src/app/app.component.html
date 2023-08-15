@@ -42,8 +42,7 @@
             <td>{{ ticket.seat }}</td>
             <td>{{ ticket.service }}</td>
             <td>
-              <span *ngIf="ticket.checked; else no">YES</span>
-              <ng-template #no>NO</ng-template>
+              {{ ticket.checked | boolean:'Yes':'No' }}
             </td>
             <td>
               <app-btn-group

@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './common/nav/nav.component';
 import { BtnGroupComponent } from './common/btn-group/btn-group.component';
 import { SelectDirective } from './common/btn-group/select.directive';
+import { BooleanPipe } from './pipe/boolean.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     BtnGroupComponent,
-    SelectDirective
+    SelectDirective,
+    BooleanPipe
   ],
   imports: [
     BrowserModule,

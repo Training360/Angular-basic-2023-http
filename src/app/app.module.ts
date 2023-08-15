@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './common/nav/nav.component';
+import { BtnGroupComponent } from './common/btn-group/btn-group.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    BtnGroupComponent
   ],
   imports: [
     BrowserModule,

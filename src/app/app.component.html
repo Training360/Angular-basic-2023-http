@@ -24,12 +24,27 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <table>
+      <table class="table table-striped">
         <thead>
-          <tr></tr>
+          <tr>
+            <th>ID</th>
+            <th>F.N.</th>
+            <th>Seat</th>
+            <th>Service</th>
+            <th>Checked</th>
+          </tr>
         </thead>
         <tbody>
-          <tr></tr>
+          <tr *ngFor="let ticket of tickets">
+            <td>{{ ticket.id }}</td>
+            <td>{{ ticket.flightNumber }}</td>
+            <td>{{ ticket.seat }}</td>
+            <td>{{ ticket.service }}</td>
+            <td>
+              <span *ngIf="ticket.checked; else no">YES</span>
+              <ng-template #no>NO</ng-template>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

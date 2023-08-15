@@ -6,9 +6,9 @@
       <button (click)="toggleSearchBar()" class="btn btn-info" type="button">Tools</button>
     </div>
   </div>
-  <div *ngIf="isSearchBarVisible; else searchHidden" class="row mt-2">
+  <div *ngIf="isSearchBarVisible; else searchHidden" class="row my-2">
     <div class="col-4">
-      <input type="text" class="form-control">
+      <input #filterInput (input)="filterPhrase = filterInput.value" type="text" class="form-control">
     </div>
     <div class="col-2">
       <button class="btn btn-primary">
@@ -36,7 +36,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ticket of tickets">
+          <tr *ngFor="let ticket of tickets | arrayFilter:filterPhrase">
             <td>{{ ticket.id }}</td>
             <td>{{ ticket.flightNumber }}</td>
             <td>{{ ticket.seat }}</td>

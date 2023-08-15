@@ -12,6 +12,8 @@ export class AppComponent {
 
   isSearchBarVisible: boolean = false;
 
+  filterPhrase: string = '';
+
   tickets: Ticket[] = [
     {
       id: 1,
@@ -53,4 +55,5 @@ export class AppComponent {
       }
     }
   }
+
 }

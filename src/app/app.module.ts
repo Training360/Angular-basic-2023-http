@@ -8,6 +8,7 @@ import { NavComponent } from './common/nav/nav.component';
 import { BtnGroupComponent } from './common/btn-group/btn-group.component';
 import { SelectDirective } from './common/btn-group/select.directive';
 import { BooleanPipe } from './pipe/boolean.pipe';
+import { ArrayFilterPipe } from './pipe/array-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BooleanPipe } from './pipe/boolean.pipe';
     NavComponent,
     BtnGroupComponent,
     SelectDirective,
-    BooleanPipe
+    BooleanPipe,
+    ArrayFilterPipe
   ],
   imports: [
     BrowserModule,

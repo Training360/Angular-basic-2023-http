@@ -28,4 +28,11 @@ export class BaseService<T> {
     return this.http.get<T>(`${this.apiUrl}${this.entity}/${id}`);
   }
 
+  create(entity: T): Observable<T> {
+    return this.http.post<T>(
+      `${this.apiUrl}${this.entity}`,
+      entity,
+    );
+  }
+
 }

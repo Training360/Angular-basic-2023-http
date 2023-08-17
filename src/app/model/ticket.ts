@@ -1,5 +1,5 @@
 export class Ticket {
-  id: number = 0;
+  id?: number = 0;
   flightNumber: string = '';
   seat: string = '';
   service: 'tourist' | 'business' | 'economy' = 'economy';

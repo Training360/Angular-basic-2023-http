@@ -24,3 +24,9 @@
 - [BaseServiece](src/app/service/base.service.ts)
 - [TicketService](src/app/service/ticket.service.ts)
 - [AppComponent](src/app/app.component.ts)
+
+## Lesson-04
+- [BaseServiece](src/app/service/base.service.ts)
+- [AppComponent](src/app/app.component.ts)
+- [Ticket](src/app/model/ticket.ts)
+

@@ -44,11 +44,22 @@ export class AppComponent implements OnInit {
   ];
 
   btnGroup: IBtn[] = [
-    {name: 'show', type: 'info', icon: 'fa-eye'},
-    {name: 'remove', type: 'danger', icon: 'fa-trash'},
+    { name: 'show', type: 'info', icon: 'fa-eye' },
+    { name: 'remove', type: 'danger', icon: 'fa-trash' },
   ]
 
   ngOnInit(): void {
+    const testTicket: Ticket = {
+      flightNumber: 'ts345',
+      seat: 'D6',
+      service: 'business',
+      checked: false,
+    };
+
+    this.ticketService.create(testTicket).subscribe(
+      ticket => console.log('Ticket created: ', ticket)
+    );
+
     this.ticketService.getAll().subscribe(
       tickets => console.log(tickets)
     );
@@ -60,7 +71,7 @@ export class AppComponent implements OnInit {
 
   onGroupClick(details: IBtnGroupOutput) {
     if (details.name === 'remove') {
-      const index = this.tickets.findIndex( ticket => ticket === details.data );
+      const index = this.tickets.findIndex(ticket => ticket === details.data);
       if (index > -1) {
         this.tickets.splice(index, 1);
       }

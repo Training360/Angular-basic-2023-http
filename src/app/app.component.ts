@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Ticket } from './model/ticket';
 import { IBtn, IBtnGroupOutput } from './common/btn-group/btn-group.component';
+import { BaseService } from './service/base.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { IBtn, IBtnGroupOutput } from './common/btn-group/btn-group.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  baseService: BaseService = inject(BaseService);
+
   title = 'angular-directives';
 
   isSearchBarVisible: boolean = false;

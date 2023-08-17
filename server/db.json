@@ -7006,6 +7006,13 @@
       "service": "business",
       "checked": false,
       "id": 1001
+    },
+    {
+      "flightNumber": "ts345",
+      "seat": "D6",
+      "service": "business",
+      "checked": false,
+      "id": 1002
     }
   ]
 }

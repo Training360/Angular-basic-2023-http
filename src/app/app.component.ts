@@ -3,6 +3,7 @@ import { Ticket } from './model/ticket';
 import { IBtn, IBtnGroupOutput } from './common/btn-group/btn-group.component';
 import { BaseService } from './service/base.service';
 import { TicketService } from './service/ticket.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -46,31 +47,12 @@ export class AppComponent implements OnInit {
   btnGroup: IBtn[] = [
     { name: 'show', type: 'info', icon: 'fa-eye' },
     { name: 'remove', type: 'danger', icon: 'fa-trash' },
-  ]
+  ];
+
+  tickets$ = this.ticketService.list$;
 
   ngOnInit(): void {
-    const testTicket: Ticket = {
-      flightNumber: 'ts345',
-      seat: 'D6',
-      service: 'business',
-      checked: false,
-    };
-
-    this.ticketService.list$.subscribe( console.log );
-
-    this.ticketService.one$.subscribe( console.log );
-
     this.ticketService.dispatch('getAll');
-
-    this.ticketService.dispatch('get', 33);
-
-    // this.ticketService.create(testTicket).subscribe(
-    //   ticket => console.log('Ticket created: ', ticket)
-    // );
-
-    // this.ticketService.getAll().subscribe(
-    //   tickets => console.log(tickets)
-    // );
   }
 
   toggleSearchBar(): void {
@@ -78,12 +60,7 @@ export class AppComponent implements OnInit {
   }
 
   onGroupClick(details: IBtnGroupOutput) {
-    if (details.name === 'remove') {
-      const index = this.tickets.findIndex(ticket => ticket === details.data);
-      if (index > -1) {
-        this.tickets.splice(index, 1);
-      }
-    }
+    this.ticketService.dispatch('delete', (details.data as Ticket));
   }
 
 }

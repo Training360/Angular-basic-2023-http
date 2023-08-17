@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "readme:update": "git checkout --patch lesson-09 README.md ; git add . ; git commit -m 'readme' ; git push"
   },
   "private": true,
   "dependencies": {

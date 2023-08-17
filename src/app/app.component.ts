@@ -51,8 +51,12 @@ export class AppComponent implements OnInit {
 
   tickets$ = this.ticketService.list$;
 
+  selectedTicket$ = this.ticketService.one$;
+
   ngOnInit(): void {
     this.ticketService.dispatch('getAll');
+
+    this.selectedTicket$.subscribe( console.log );
   }
 
   toggleSearchBar(): void {
@@ -60,11 +64,13 @@ export class AppComponent implements OnInit {
   }
 
   onGroupClick(details: IBtnGroupOutput) {
-    if (details.name === 'remove') {
-      const index = this.tickets.findIndex(ticket => ticket === details.data);
-      if (index > -1) {
-        this.tickets.splice(index, 1);
-      }
+    switch(details.name) {
+      case 'remove':
+        this.ticketService.dispatch('delete', (details.data as Ticket));
+        break;
+      case 'show':
+        this.ticketService.dispatch('get', details.data.id);
+        break;
     }
   }
 

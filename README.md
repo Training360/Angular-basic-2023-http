@@ -38,5 +38,13 @@
 - [AppComponent](src/app/app.component.ts)
 
 ## Lesson-07
+- [AppComponent](src/app/app.component.ts)
 
+## Lesson-08
+- [AppComponent](src/app/app.component.ts)
 
+## Lesson-09
+- [BaseServiece](src/app/service/base.service.ts)
+- [Ticket](src/app/model/ticket.ts)
+- [TicketService](src/app/service/ticket.service.ts)
+- [AppComponent](src/app/app.component.ts)

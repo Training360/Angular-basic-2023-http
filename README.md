@@ -30,3 +30,5 @@
 - [AppComponent](src/app/app.component.ts)
 - [Ticket](src/app/model/ticket.ts)
 
+## Lesson-05
+- [BaseServiece](src/app/service/base.service.ts)

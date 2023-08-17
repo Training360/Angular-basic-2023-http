@@ -3,10 +3,14 @@ import { Inject, Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+export interface IBaseEntity {
+  id?: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService<T> {
+export class BaseService<T extends IBaseEntity> {
 
   private http: HttpClient = inject(HttpClient);
 
@@ -32,6 +36,19 @@ export class BaseService<T> {
     return this.http.post<T>(
       `${this.apiUrl}${this.entity}`,
       entity,
+    );
+  }
+
+  update(entity: T): Observable<T> {
+    return this.http.patch<T>(
+      `${this.apiUrl}${this.entity}/${entity.id}`,
+      entity,
+    );
+  }
+
+  delete(entity: T): Observable<T> {
+    return this.http.delete<T>(
+      `${this.apiUrl}${this.entity}/${entity.id}`,
     );
   }
 

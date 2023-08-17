@@ -1,16 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Ticket } from './model/ticket';
 import { IBtn, IBtnGroupOutput } from './common/btn-group/btn-group.component';
 import { BaseService } from './service/base.service';
+import { TicketService } from './service/ticket.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  baseService: BaseService = inject(BaseService);
+  ticketService: TicketService = inject(TicketService);
 
   title = 'angular-directives';
 
@@ -46,6 +47,12 @@ export class AppComponent {
     {name: 'show', type: 'info', icon: 'fa-eye'},
     {name: 'remove', type: 'danger', icon: 'fa-trash'},
   ]
+
+  ngOnInit(): void {
+    this.ticketService.getAll().subscribe(
+      tickets => console.log(tickets)
+    );
+  }
 
   toggleSearchBar(): void {
     this.isSearchBarVisible = !this.isSearchBarVisible;

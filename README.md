@@ -16,3 +16,11 @@
 - [TicketService](src/app/service/ticket.service.ts)
 - Install json-server: `npm i -g json-server`
 - [DB.json](server/db.json)
+
+## Lesson-03
+- Add environments: `ng g environments`
+- [environment.development](src/environments/environment.development.ts)
+- [environment](src/environments/environment.ts)
+- [BaseServiece](src/app/service/base.service.ts)
+- [TicketService](src/app/service/ticket.service.ts)
+- [AppComponent](src/app/app.component.ts)

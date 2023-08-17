@@ -32,3 +32,10 @@
 
 ## Lesson-05
 - [BaseServiece](src/app/service/base.service.ts)
+
+## Lesson-06
+- [BaseServiece](src/app/service/base.service.ts)
+- [AppComponent](src/app/app.component.ts)
+
+
+

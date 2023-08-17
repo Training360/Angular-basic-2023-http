@@ -56,13 +56,21 @@ export class AppComponent implements OnInit {
       checked: false,
     };
 
-    this.ticketService.create(testTicket).subscribe(
-      ticket => console.log('Ticket created: ', ticket)
-    );
+    this.ticketService.list$.subscribe( console.log );
 
-    this.ticketService.getAll().subscribe(
-      tickets => console.log(tickets)
-    );
+    this.ticketService.one$.subscribe( console.log );
+
+    this.ticketService.dispatch('getAll');
+
+    this.ticketService.dispatch('get', 33);
+
+    // this.ticketService.create(testTicket).subscribe(
+    //   ticket => console.log('Ticket created: ', ticket)
+    // );
+
+    // this.ticketService.getAll().subscribe(
+    //   tickets => console.log(tickets)
+    // );
   }
 
   toggleSearchBar(): void {

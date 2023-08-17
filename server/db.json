@@ -7020,6 +7020,34 @@
       "service": "business",
       "checked": false,
       "id": 1003
+    },
+    {
+      "flightNumber": "ts345",
+      "seat": "D6",
+      "service": "business",
+      "checked": false,
+      "id": 1004
+    },
+    {
+      "flightNumber": "ts345",
+      "seat": "D6",
+      "service": "business",
+      "checked": false,
+      "id": 1005
+    },
+    {
+      "flightNumber": "ts345",
+      "seat": "D6",
+      "service": "business",
+      "checked": false,
+      "id": 1006
+    },
+    {
+      "flightNumber": "ts345",
+      "seat": "D6",
+      "service": "business",
+      "checked": false,
+      "id": 1007
     }
   ]
 }
